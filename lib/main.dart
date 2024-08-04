@@ -11,18 +11,19 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.teal,
         body: SafeArea(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const CircleAvatar(
+              CircleAvatar(
                 radius: 60,
                 backgroundImage: AssetImage('images/ojo.jpg'),
               ),
-              const Text(
+              Text(
                 'Abraham Damilola Ojo',
                 style: TextStyle(
                   fontFamily: 'Pacifico',
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
                   fontSize: 20,
                 ),
               ),
-              const Text(
+              Text(
                 'FLUTTER DEVELOPER',
                 style: TextStyle(
                   fontFamily: 'SourceSans',
@@ -41,51 +42,50 @@ class MyApp extends StatelessWidget {
                   letterSpacing: 2.5,
                 ),
               ),
-              Container(
+              SizedBox(
+                height: 10,
+                width: 150,
+                child: Divider(
+                  color: Colors.white60,
+                ),
+              ),
+              Card(
                 color: Colors.white,
-                margin: const EdgeInsets.symmetric(
+                margin: EdgeInsets.symmetric(
                   vertical: 10,
                   horizontal: 25,
                 ),
-                padding: const EdgeInsets.all(10),
-                child: const Row(
-                  children: [
-                    Icon(
-                      Icons.phone,
-                      color: Colors.teal,
-                      size: 25,
+                child: ListTile(
+                  leading: Icon(
+                    Icons.phone,
+                    color: Colors.teal,
+                    size: 25,
+                  ),
+                  title: Text(
+                    '+234 8147484787',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontFamily: 'SourceSans',
                     ),
-                    SizedBox(width: 10),
-                    Text(
-                      '+234 8147484787',
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontFamily: 'SourceSans',
-                      ),
-                    ),
-                  ],
+                  ),
                 ),
               ),
-              Container(
+              Card(
                 color: Colors.white,
-                padding: const EdgeInsets.all(10),
-                margin: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
-                child: const Row(
-                  children: [
-                    Icon(
-                      Icons.email_outlined,
-                      color: Colors.teal,
-                      size: 25,
+                margin: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+                child: ListTile(
+                  leading: Icon(
+                    Icons.email_outlined,
+                    color: Colors.teal,
+                    size: 25,
+                  ),
+                  title: Text(
+                    'abrahamojo14@gmail.com',
+                    style: TextStyle(
+                      fontFamily: 'SourceSans',
+                      fontSize: 20,
                     ),
-                    SizedBox(width: 10),
-                    Text(
-                      'abrahamojo14@gmail.com',
-                      style: TextStyle(
-                        fontFamily: 'SourceSans',
-                        fontSize: 20,
-                      ),
-                    ),
-                  ],
+                  ),
                 ),
               ),
             ],
